@@ -198,6 +198,11 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+ .course-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* Course Image */
@@ -564,23 +569,29 @@ body {
   }
 }
 
-/* Base Reset */
+/* Reset */
 body, html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Footer Container */
-.footer {
+/* Wrapper for full-width footer */
+.footer-wrapper {
+  width: 100%;
   background-color: #0d1172;
-  color: white;
-  font-family: Arial, sans-serif;
-  padding: 50px 30px 0; /* No bottom padding */
   margin: 0;
+  padding: 0;
 }
 
-/* Layout Container */
+/* Main Footer */
+.footer {
+  color: white;
+  font-family: Arial, sans-serif;
+  padding: 50px 30px 0;
+}
+
+/* Footer Container with max width */
 .footer-container {
   display: flex;
   flex-wrap: wrap;
@@ -588,9 +599,10 @@ body, html {
   max-width: 1200px;
   margin: auto;
   gap: 30px;
+  font-size:large;
 }
 
-/* Each Column */
+/* Each column */
 .footer-column {
   flex: 1 1 250px;
   min-width: 240px;
@@ -602,7 +614,7 @@ body, html {
   margin-bottom: 20px;
 }
 
-/* Column Headings */
+/* Headings */
 .footer-column h3 {
   color: orange;
   text-decoration: underline;
@@ -610,64 +622,57 @@ body, html {
   font-size: 18px;
 }
 
-/* List Styling */
+/* Lists */
 .footer-column ul {
   list-style: none;
   padding: 0;
 }
-
 .footer-column ul li {
   margin-bottom: 8px;
 }
-
 .footer-column ul li a {
   color: white;
   text-decoration: none;
   font-size: 14px;
 }
-
 .footer-column ul li a:hover {
   text-decoration: underline;
 }
 
-/* Text inside contact/info section */
+/* Paragraphs */
 .footer-column p {
   line-height: 1.7;
   font-size: 14px;
   margin-bottom: 10px;
 }
 
-/* Social Media Icons */
+/* Social Icons */
 .social-icons {
   margin-top: 20px;
   display: flex;
   gap: 15px;
 }
-
 .social-icons i {
   font-size: 20px;
   color: orange;
   cursor: pointer;
 }
 
-/* Bottom Bar */
+/* Bottom Copyright */
 .footer-bottom {
   width: 100%;
-  background-color: orange;
-  padding: 12px 0;
-  color: white;
-  font-weight: bold;
+  background-color: #73de3e;
+  color: black;
   text-align: center;
-  margin: 0;
-  border: none;
+  padding: 12px 0;
+  font-size: 20px;
 }
-
 
 </style>
 </head>
     <body>
         
-        <!-- Top Header -->
+  <!-- Top Header -->
 <div class="top-header">
   <a href="blog.html">Blogs</a>
   <span>|</span>
@@ -691,15 +696,13 @@ body, html {
   <!-- Search Box -->
   <div style="flex: 1; max-width: 250px; display: flex; align-items: center; border: 1px solid #ccc; border-radius: 8px; overflow: hidden; margin: 0 20px;">
     <input type="text" placeholder="Search course" style="flex: 1; padding: 10px; border: none; outline: none;">
-    <button style="padding: 10px 15px; border: none; background: linear-gradient(to right, #d51e54, #f6b91e); color: white; cursor: pointer;">
-    🔍
-    </button>
+    <button style="padding: 10px 15px; border: none; background: linear-gradient(to right, #d51e54, #f6b91e); color: white; cursor: pointer;"></button>
   </div>
 
   <!-- Navigation Links -->
   <div class="navbar">
   <div class="nav-links">
-    <a href="hamsiniTechSolutions.html" class="home-icon">🏠</a>
+    <a href="hamsiniTechSolutions.html" class="home-icon">Home</a>
 
     <div class="dropdown">
       <a href="#">All Courses &#9662;</a>
@@ -1224,69 +1227,73 @@ setInterval(showNextSlide, 6000); // Change every 6 seconds */}
 </section>
 
 <!-- Footer HTML -->
-<footer class="footer">
-  <div class="footer-container">
-    
-    <!-- Logo & About -->
-    <div class="footer-column footer-about">
-      <img src="logo.png" alt="Logo" class="footer-logo">
-      <p>
-        At Hamsini Tech Solutions you are guaranteed best in class training as we team up the most efficient, professional and dedicated trainers who are subject matter experts in their respective area of specialization.
-      </p>
-      <div class="social-icons">
-        <i class="fab fa-facebook-f"></i>
-        <i class="fab fa-youtube"></i>
-        <i class="fab fa-instagram"></i>
-        <i class="fab fa-whatsapp"></i>
-        <i class="fab fa-telegram"></i>
+<div class="footer-wrapper">
+  <footer class="footer">
+    <div class="footer-container">
+
+      <!-- Logo & About -->
+      <div class="footer-column footer-about">
+        <img src="logo.png" alt="Logo" class="footer-logo">
+        <p>
+          At Hamsini Tech Solutions you are guaranteed best in class training as we team up the most efficient, professional and dedicated trainers who are subject matter experts in their respective area of specialization.
+        </p>
+        <div class="social-icons">
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-youtube"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-whatsapp"></i>
+          <i class="fab fa-telegram"></i>
+        </div>
+      </div>
+
+      <!-- Useful Links -->
+      <div class="footer-column">
+        <h3>USEFUL LINKS</h3>
+        <ul>
+          <li><a href="#">About us</a></li>
+          <li><a href="#">All Courses</a></li>
+          <li><a href="#">Trainee Registration</a></li>
+          <li><a href="#">Internships</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Testimonials</a></li>
+          <li><a href="#">Placements</a></li>
+          <li><a href="#">Online Training</a></li>
+          <li><a href="#">Classroom Training</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Our Policies -->
+      <div class="footer-column">
+        <h3>OUR POLICIES</h3>
+        <ul>
+          <li><a href="#">Terms & Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Refund & Cancellation</a></li>
+          <li><a href="#">Code of Conduct</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-column">
+        <h3>CONTACT INFO</h3>
+        <p><i class="fas fa-map-marker-alt"></i> Sri Sai Arcade, Door No. 7-1-455, 2nd Floor, Ameerpet, Hyderabad, Telangana 500038</p>
+        <p><i class="fas fa-phone"></i> IND: +91 9100920092, +91 9100940094</p>
+        <p><i class="fas fa-phone"></i> USA: +1 201 203 8999</p>
+        <p><i class="fas fa-envelope"></i> info@hamsinitech.com</p>
+        <p><i class="fas fa-clock"></i> Mon - Sat: 7AM to 9PM (IST)</p>
       </div>
     </div>
+  </footer>
 
-    <!-- Useful Links -->
-    <div class="footer-column">
-      <h3>USEFUL LINKS</h3>
-      <ul>
-        <li><a href="#">About us</a></li>
-        <li><a href="#">All Courses</a></li>
-        <li><a href="#">Trainee Registration</a></li>
-        <li><a href="#">Internships</a></li>
-        <li><a href="#">Careers</a></li>
-        <li><a href="#">Testimonials</a></li>
-        <li><a href="#">Placements</a></li>
-        <li><a href="#">Online Training</a></li>
-        <li><a href="#">Classroom Training</a></li>
-        <li><a href="#">Contact Us</a></li>
-      </ul>
-    </div>
-
-    <!-- Our Policies -->
-    <div class="footer-column">
-      <h3>OUR POLICIES</h3>
-      <ul>
-        <li><a href="#">Terms & Conditions</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Refund & Cancellation</a></li>
-        <li><a href="#">Code of Conduct</a></li>
-      </ul>
-    </div>
-
-    <!-- Contact Info -->
-    <div class="footer-column">
-      <h3>CONTACT INFO</h3>
-      <p><i class="fas fa-map-marker-alt"></i> Sri Sai Arcade, Door No. 7-1-455, 2nd Floor, Ameerpet, Hyderabad, Telangana 500038</p>
-      <p><i class="fas fa-phone"></i> IND: +91 9100920092, +91 9100940094</p>
-      <p><i class="fas fa-phone"></i> USA: +1 201 203 8999</p>
-      <p><i class="fas fa-envelope"></i> info@hamsinitech.com</p>
-      <p><i class="fas fa-clock"></i> Mon - Sat: 7AM to 9PM (IST)</p>
-    </div>
-  </div>
-
+  <!-- Move footer-bottom outside footer tag but still inside wrapper -->
   <div class="footer-bottom">
-    © Copyright – 2025 | Hamsini Tech Solutions | All Rights Reserved
-  </div>
+    © Copyright – 2025 | Hamsini Tech Solutions | All Rights Reserved 
+   </div>
+</div>
 
-  <!-- Font Awesome -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-</footer>
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
 </body>
 </html>
