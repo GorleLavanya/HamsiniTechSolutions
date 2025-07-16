@@ -500,12 +500,6 @@ body {
   gap: 20px;
   font-size: 28px;
 }
-
-.fa-square-facebook { color: #3b5998; }
-.fa-instagram { color: #e4405f; }
-.fa-square-whatsapp { color: #25d366; }
-.fa-linkedin { color: #0077b5; }
-
 .social-icons i {
   cursor: pointer;
   transition: transform 0.2s;
@@ -760,9 +754,9 @@ body, html {
     </div>
 
     <!-- Search Box -->
-    <div class="search-box">
-      <input type="text" placeholder="Search course">
-    </div>
+  <div class="search-box">
+  <input type="text" placeholder="Search course" id="searchInput">
+  </div>
 
     <!-- Navigation Links -->
     <div class="navbar">
@@ -790,8 +784,8 @@ body, html {
         <div class="dropdown">
           <a href="#">Training &#9662;</a>
           <div class="dropdown-content">
-            <a href="new-batches.html">New Batches</a>
-            <a href="weekend.html">Weekend Batches</a>
+            <a href="newBatches.html">New Batches</a>
+            <a href="weekendBatch.html">Weekend Batches</a>
           </div>
         </div>
 
@@ -838,7 +832,7 @@ body, html {
       <p>⏳ <strong>Dur:</strong> 3 Months</p>
     </div>
     <div class="card-footer">
-    <a href="javascript:void(0);" class="enroll-btn" onclick="openEnrollModal()">ENROLL</a>
+    <a href="javascript:void(0);" class="enroll-btn" onclick="openEnrollModal('Aws and Devops')">ENROLL</a>
     <a href="javascript:void(0);" class="share-btn" onclick="openShareModal()">🔗 SHARE</a>
 
   </div>
@@ -857,7 +851,7 @@ body, html {
       <p>⏳ <strong>Dur:</strong> 2 Months</p>
     </div>
     <div class="card-footer">
-    <a href="javascript:void(0);" class="enroll-btn" onclick="openEnrollModal()">ENROLL</a>
+    <a href="javascript:void(0);" class="enroll-btn" onclick="openEnrollModal('Azure Devops')">ENROLL</a>
     <a href="javascript:void(0);" class="share-btn" onclick="openShareModal()">🔗 SHARE</a>
 
   </div>
@@ -876,7 +870,7 @@ body, html {
       <p>⏳ <strong>Dur:</strong> 2 Months</p>
     </div>
     <div class="card-footer">
-    <a href="javascript:void(0);" class="enroll-btn" onclick="openEnrollModal()">ENROLL</a>
+    <a href="javascript:void(0);" class="enroll-btn" onclick="openEnrollModal('Java Full Stack')">ENROLL</a>
     <a href="javascript:void(0);" class="share-btn" onclick="openShareModal()">🔗 SHARE</a>
 
   </div>
@@ -895,7 +889,7 @@ body, html {
       <p>⏳ <strong>Dur:</strong> 2 Months</p>
     </div>
     <div class="card-footer">
-    <a href="javascript:void(0);" class="enroll-btn" onclick="openEnrollModal()">ENROLL</a>
+    <a href="javascript:void(0);" class="enroll-btn" onclick="openEnrollModal(ReactJS)">ENROLL</a>
     <a href="javascript:void(0);" class="share-btn" onclick="openShareModal()">🔗 SHARE</a>
 
   </div>
@@ -914,7 +908,7 @@ body, html {
       <p>⏳ <strong>Dur:</strong> 2 Months</p>
     </div>
     <div class="card-footer">
-    <a href="javascript:void(0);" class="enroll-btn" onclick="openEnrollModal()">ENROLL</a>
+    <a href="javascript:void(0);" class="enroll-btn" onclick="openEnrollModal(GenerativeAI)">ENROLL</a>
     <a href="javascript:void(0);" class="share-btn" onclick="openShareModal()">🔗 SHARE</a>
   </div>
   </div>
@@ -932,7 +926,7 @@ body, html {
       <p>⏳ <strong>Dur:</strong> 4 Months</p>
     </div>
     <div class="card-footer">
-    <a href="javascript:void(0);" class="enroll-btn" onclick="openEnrollModal()">ENROLL</a>
+    <a href="javascript:void(0);" class="enroll-btn" onclick="openEnrollModal('Data Analytics')">ENROLL</a>
     <a href="javascript:void(0);" class="share-btn" onclick="openShareModal()">🔗 SHARE</a>
 
   </div>
@@ -951,7 +945,7 @@ body, html {
       <p>⏳ <strong>Dur:</strong> 5 Months</p>
     </div>
     <div class="card-footer">
-    <a href="javascript:void(0);" class="enroll-btn" onclick="openEnrollModal()">ENROLL</a>
+    <a href="javascript:void(0);" class="enroll-btn" onclick="openEnrollModal('Data Science')">ENROLL</a>
     <a href="javascript:void(0);" class="share-btn" onclick="openShareModal()">🔗 SHARE</a>
 
   </div>
@@ -971,7 +965,7 @@ body, html {
       <p>⏳ <strong>Dur:</strong> 2 Months</p>
     </div>
     <div class="card-footer">
-    <a href="javascript:void(0);" class="enroll-btn" onclick="openEnrollModal()">ENROLL</a>
+    <a href="javascript:void(0);" class="enroll-btn" onclick="openEnrollModal('Power Bi')">ENROLL</a>
     <a href="javascript:void(0);" class="share-btn" onclick="openShareModal()">🔗 SHARE</a>
 
   </div>
@@ -991,7 +985,7 @@ body, html {
       <p>⏳ <strong>Dur:</strong> 45 Days</p>
     </div>
     <div class="card-footer">
-    <a href="javascript:void(0);" class="enroll-btn" onclick="openEnrollModal()">ENROLL</a>
+    <a href="javascript:void(0);" class="enroll-btn" onclick="openEnrollModal('Linux Admin')">ENROLL</a>
     <a href="javascript:void(0);" class="share-btn" onclick="openShareModal()">🔗 SHARE</a>
 
   </div>
@@ -1010,7 +1004,7 @@ body, html {
       <p>⏳ <strong>Dur:</strong> 2 Months</p>
     </div>
     <div class="card-footer">
-    <a href="javascript:void(0);" class="enroll-btn" onclick="openEnrollModal()">ENROLL</a>
+    <a href="javascript:void(0);" class="enroll-btn" onclick="openEnrollModal('Tableau')">ENROLL</a>
     <a href="javascript:void(0);" class="share-btn" onclick="openShareModal()">🔗 SHARE</a>
 
   </div>
@@ -1029,7 +1023,7 @@ body, html {
       <p>⏳ <strong>Dur:</strong> 45 Days</p>
     </div>
     <div class="card-footer">
-    <a href="javascript:void(0);" class="enroll-btn" onclick="openEnrollModal()">ENROLL</a>
+    <a href="javascript:void(0);" class="enroll-btn" onclick="openEnrollModal('Python')">ENROLL</a>
     <a href="javascript:void(0);" class="share-btn" onclick="openShareModal()">🔗 SHARE</a>
   </div>
   </div>
@@ -1047,7 +1041,7 @@ body, html {
       <p>⏳ <strong>Dur:</strong> 2 Months</p>
     </div>
     <div class="card-footer">
-    <a href="javascript:void(0);" class="enroll-btn" onclick="openEnrollModal()">ENROLL</a>
+    <a href="javascript:void(0);" class="enroll-btn" onclick="openEnrollModal('Python Full Stack')">ENROLL</a>
     <a href="javascript:void(0);" class="share-btn" onclick="openShareModal()">🔗 SHARE</a>
   </div>
   </div>
@@ -1138,8 +1132,8 @@ function showNextSlide() {
 setInterval(showNextSlide, 6000); // Change every 6 seconds */}
 </script>
 
-   <!-- Share Modal -->
-    <!-- Share Modal -->
+  
+<!-- Share Modal -->
 <div id="shareModal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeShareModal()">&times;</span>
@@ -1148,15 +1142,15 @@ setInterval(showNextSlide, 6000); // Change every 6 seconds */}
       <p>Share this course's details with your family & friends</p>
 
       <div class="share-link">
-        <input type="text" value="https://nareshit.com/courses/full-stack-java-online-training" readonly id="shareUrl">
+        <input type="text" value="https://hamsini.com/courses/full-stack-java-online-training" readonly id="shareUrl">
         <button class="copy-btn" onclick="copyLink()">Copy Link</button>
       </div>
 
       <div class="social-icons">
-        <i class="fa-brands fa-square-facebook" onclick="openShare('facebook')"></i>
-        <i class="fa-brands fa-instagram" onclick="openShare('instagram')"></i>
-        <i class="fa-brands fa-square-whatsapp" onclick="openShare('whatsapp')"></i>
-        <i class="fa-brands fa-linkedin" onclick="openShare('linkedin')"></i>
+        <i class="fa-brands fa-square-facebook" onclick="openShare('facebook')" style="color: blue;"></i>
+        <i class="fa-brands fa-instagram" onclick="openShare('instagram')" style="color: red;"></i>
+        <i class="fa-brands fa-square-whatsapp" onclick="openShare('whatsapp')" style="color: green;"></i>
+        <i class="fa-brands fa-linkedin" onclick="openShare('linkedin')" style="color: blue;"></i>
       </div>
     </div>
   </div>
@@ -1209,29 +1203,32 @@ setInterval(showNextSlide, 6000); // Change every 6 seconds */}
   };
 </script>
 
-<!--Enroll Model-->
+
  <!-- Enroll Modal -->
+<!-- Enroll Modal -->
 <div id="enrollModal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeEnrollModal()">&times;</span>
     <div class="enroll-form">
       <h2>Course :</h2>
-      <h1>Full Stack Java</h1>
+      <h1 id="courseName">Course Name</h1>
 
-      <input type="text" placeholder="Full Name" required>
-      <input type="text" placeholder="Mobile Number" required>
-      <input type="email" placeholder="Email address" required>
+      <!-- 🟢 Add IDs here -->
+      <input type="text" id="enrollName" placeholder="Full Name" required>
+      <input type="text" id="enrollMobile" placeholder="Mobile Number" required>
+      <input type="email" id="enrollEmail" placeholder="Email address" required>
 
       <div class="buttons">
         <button class="skip-btn" onclick="closeEnrollModal()">Skip</button>
-        <button class="submit-btn">Submit</button>
+        <button class="submit-btn" onclick="submitEnrollForm()">Submit</button>
       </div>
     </div>
   </div>
 </div>
 
 <script>
-  function openEnrollModal() {
+  function openEnrollModal(courseTitle) {
+    document.getElementById("courseName").textContent = courseTitle;
     document.getElementById("enrollModal").style.display = "block";
   }
 
@@ -1239,7 +1236,27 @@ setInterval(showNextSlide, 6000); // Change every 6 seconds */}
     document.getElementById("enrollModal").style.display = "none";
   }
 
-  // Close enroll modal if clicking outside it
+  function submitEnrollForm() {
+    const name = document.getElementById("enrollName").value.trim();
+    const mobile = document.getElementById("enrollMobile").value.trim();
+    const email = document.getElementById("enrollEmail").value.trim();
+    const course = document.getElementById("courseName").textContent;
+
+    if (name === "" || mobile === "" || email === "") {
+      alert("Please fill in all fields.");
+    } else {
+      alert(
+        "Enrollment submitted successfully!\n\n" +
+        "Course: " + course + "\n" +
+        "Name: " + name + "\n" +
+        "Mobile: " + mobile + "\n" +
+        "Email: " + email
+      );
+      closeEnrollModal();
+    }
+  }
+
+  // Close modal if clicking outside
   window.addEventListener("click", function(event) {
     const enrollModal = document.getElementById("enrollModal");
     if (event.target === enrollModal) {
@@ -1247,6 +1264,7 @@ setInterval(showNextSlide, 6000); // Change every 6 seconds */}
     }
   });
 </script>
+
 
 <!-- Our Services Section -->
 <section class="services-section">
@@ -1291,6 +1309,24 @@ setInterval(showNextSlide, 6000); // Change every 6 seconds */}
     </div>
   </div>
 </section>
+
+   <script>
+  // When user types in the search box
+  document.getElementById("searchInput").addEventListener("input", function () {
+    const searchTerm = this.value.toLowerCase();
+    const courseCards = document.querySelectorAll(".course-card");
+
+    courseCards.forEach(card => {
+      const courseTitle = card.querySelector("h2").textContent.toLowerCase();
+      if (courseTitle.includes(searchTerm)) {
+        card.style.display = "flex"; // or "block"
+      } else {
+        card.style.display = "none";
+      }
+    });
+  });
+</script>
+
 
 <!-- Footer HTML -->
 <div class="footer-wrapper">
