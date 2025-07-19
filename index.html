@@ -19,7 +19,7 @@
     color: white;
     text-decoration: none;
     position: relative;
-    padding-bottom: 3px;
+    padding-bottom: 5px;
    }
 
   .top-header a:hover::after {
@@ -69,7 +69,9 @@
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-      padding: 12px 20px;
+      padding: 4px 20px;
+      margin-top: 18px;
+      
     }
 
     .logo-container img {
@@ -78,23 +80,65 @@
     }
 
     .search-box {
-      display: flex;
-      align-items: center;
-      background: rgba(255, 255, 255, 0.2);
-      border-radius: 8px;
-      margin: 0 20px;
-    }
+     position: relative;
+     width: 200px;
+     margin: 20px;
+   }
 
-    .search-box input {
-      padding: 8px 12px;
-      border: none;
-      background: transparent;
-      color: white;
-      width: 180px;
-      outline: none;
-    }
+  .search-box input {
+  width: 100%;
+  padding: 10px 45px 10px 15px;
+  border: 2px solid #ccc;
+  border-radius: 30px;
+  font-size: 16px;
+  outline: none;
+ }
 
-    .navbar {
+.search-btn {
+  position: absolute;
+  right: 5px;
+  top: 4px;
+  width: 38px;
+  height: 38px;
+  background: linear-gradient(to bottom, #f43b47, #453a94); /* red-pink to blue gradient */
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+
+ .suggestions-list {
+  position: absolute;
+  top: 48px;
+  width: 100%;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 999;
+  display: none;
+ }
+
+ .suggestions-list li {
+  padding: 10px 15px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+ }
+
+.suggestions-list li:hover {
+  background-color: #f0f0f0;
+  }
+
+  .navbar {
       display: flex;
       align-items: center;
       gap: 20px;
@@ -119,6 +163,7 @@
     .nav-links a:hover {
       background-color: rgba(255, 255, 255, 0.3);
       color: black;
+      font-weight: 600;
     }
 
     .dropdown {
@@ -133,7 +178,7 @@
       background: rgba(255, 255, 255, 0.2);
       backdrop-filter: blur(8px);
       border-radius: 8px;
-      min-width: 180px;
+      min-width: 200px;
       overflow: hidden;
       z-index: 999;
     }
@@ -753,10 +798,15 @@ body, html {
       <img src="job-assist.jpeg" alt="Hamsini Logo">
     </div>
 
-    <!-- Search Box -->
-  <div class="search-box">
-  <input type="text" placeholder="Search course" id="searchInput">
-  </div>
+  <!-- Search Box -->
+<div class="search-box">
+  <input type="text" id="searchInput" placeholder="Search course" onkeyup="filterCourses()" />
+  <button class="search-btn">
+    <i class="fa fa-search"></i>
+  </button>
+  <ul id="suggestions" class="suggestions-list"></ul>
+</div>
+
 
     <!-- Navigation Links -->
     <div class="navbar">
@@ -1396,6 +1446,109 @@ setInterval(showNextSlide, 6000); // Change every 6 seconds */}
 
 <!-- Font Awesome -->
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+  <script>
+  document.getElementById("searchInput").addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+      const input = this.value.toLowerCase();
+      const rows = document.querySelectorAll("#courseTable tr");
+
+      let found = false;
+
+      for (let i = 1; i < rows.length; i++) { // skip header
+        const courseName = rows[i].children[1].innerText.toLowerCase(); // Course Name column
+
+        if (courseName.includes(input)) {
+          found = true;
+          openForm(); // Open the modal form
+          break; // stop after first match
+        }
+      }
+
+      if (!found) {
+        alert("Course not found.");
+      }
+    }
+  });
+
+  function openForm() {
+    document.getElementById("formModal").style.display = "block";
+  }
+
+  function closeForm() {
+    document.getElementById("formModal").style.display = "none";
+  }
+
+  window.onclick = function(event) {
+    const modal = document.getElementById("formModal");
+    if (event.target === modal) {
+      closeForm();
+    }
+  }
+
+  function submitEnrollForm(event) {
+    event.preventDefault();
+    var name = document.getElementById("enrollName").value.trim();
+    var email = document.getElementById("enrollEmail").value.trim();
+    var mobile = document.getElementById("enrollMobile").value.trim();
+
+    if (name === "" || email === "" || mobile === "") {
+      alert("Please fill in all fields.");
+    } else {
+      alert("Registration successfully!");
+      closeForm();
+    }
+  }
+</script>
+   <script>
+  const courses = [
+    { name: "AWS & DevOps", link: "aws-devops.html" },
+    { name: "Azure DevOps", link: "azure.html" },
+    { name: "Java Full Stack", link: "java-fullstack.html" },
+    { name: "React.Js", link: "react.html" },
+    { name: "Generative AI", link: "genai.html" },
+    { name: "Data Analytics", link: "data-analytics.html" },
+    { name: "Data Science", link: "data-science.html" },
+    { name: "Power BI", link: "powerbi.html" },
+    { name: "Linux Admin", link: "linux.html" },
+    { name: "Tableau", link: "tableau.html" },
+    { name: "Python", link: "python.html" },
+    { name: "Python Full Stack", link: "python-fullstack.html" }
+  ];
+
+  function filterCourses() {
+    const input = document.getElementById("searchInput").value.toLowerCase();
+    const suggestions = document.getElementById("suggestions");
+    suggestions.innerHTML = "";
+
+    if (input === "") {
+      suggestions.style.display = "none";
+      return;
+    }
+
+    const matches = courses.filter(course =>
+      course.name.toLowerCase().includes(input)
+    );
+
+    if (matches.length === 0) {
+      suggestions.style.display = "none";
+      return;
+    }
+
+    matches.forEach(course => {
+      const li = document.createElement("li");
+      li.textContent = course.name;
+      li.onclick = () => {
+        window.location.href = course.link;
+      };
+      suggestions.appendChild(li);
+    });
+
+    suggestions.style.display = "block";
+  }
+</script>
+
 
 </body>
 </html>
