@@ -89,6 +89,88 @@
         font-size: 24px;
       }
     }
+    /* Modal Overlay */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.6); /* semi-transparent background */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal Content Box */
+.modal-content {
+  background-color: #fff;
+  padding: 30px 20px;
+  border-radius: 12px;
+  width: 500px;
+  max-width: 90%;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Close Button */
+.close {
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close:hover {
+  color: #e60000;
+}
+
+/* Form Inputs */
+.modal-content input,
+.modal-content select,
+.modal-content textarea {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+/* Submit Button */
+.modal-content button[type="submit"] {
+  background:blue;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s ease;
+}
+ .enquiry-button {
+  background: linear-gradient(to right, #f43b47, #453a94); /* pink to purple */
+  color: #fff;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.enquiry-button:hover {
+  background: linear-gradient(to right, #453a94, #f43b47); /* reverse gradient */
+}
+
   </style>
 </head>
 <body>
@@ -134,8 +216,55 @@
       <p><b>Certification and Recognition:</b></p>
       <li>Receive a certification upon successfully completing NareshIT's weekend IT training programs, validating your expertise and boosting your credentials in the competitive IT job market.</li>
       
-      <a href="enquiry.html" class="btn">Enquiry</a>
+      <!-- Enquiry Button -->
+      <button onclick="openEnquiryModal()">Enquiry</button>
     </div>
   </div>
+
+    <!-- Enquiry Modal -->
+<div id="enquiryModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeEnquiryModal()">&times;</span>
+    <h2>Enquiry</h2>
+    <form>
+      <input type="text" placeholder="Full Name" required />
+      <input type="text" placeholder="Mobile Number" required />
+      <input type="email" placeholder="Email address" required />
+      
+      <div style="display: flex; gap: 10px;">
+        <select required>
+          <option>Select Course</option>
+          <option>Full Stack Java</option>
+          <option>Aws and Devops</option>
+          <option>Azure Devops</option>
+          <option>Python Full Stack</option>
+          <option>Python</option>
+          <option>Data Science</option>
+          <option>Data Analytics</option>
+          <option>Tableau</option>
+          <option>Power Bi</option>
+          <option>Linux</option>
+        </select>
+
+        <select required>
+          <option>Mode of Training</option>
+          <option>Online</option>
+          <option>Classroom</option>
+        </select>
+      </div>
+
+      <textarea placeholder="Describe message here"></textarea>
+      <button type="submit">Submit</button>
+     </form>
+    </div>
+   </div>
+  <script>
+    function openEnquiryModal() {
+     document.getElementById("enquiryModal").style.display = "flex";
+     }
+    function closeEnquiryModal() {
+     document.getElementById("enquiryModal").style.display = "none";
+    }
+  </script>
 </body>
 </html>

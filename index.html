@@ -70,7 +70,7 @@
       -webkit-backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.2);
       padding: 4px 20px;
-      margin-top: 18px;
+      margin-top: 30px;
       
     }
 
@@ -80,19 +80,29 @@
     }
 
     .search-box {
-     position: relative;
-     width: 200px;
-     margin: 20px;
-   }
+  position: relative;
+  width: 200px;
+  margin: 20px;
 
-  .search-box input {
+  /* 🌟 Glass look added */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.search-box input {
   width: 100%;
   padding: 10px 45px 10px 15px;
   border: 2px solid #ccc;
   border-radius: 30px;
   font-size: 16px;
   outline: none;
- }
+  background: transparent; /* Keep transparent for glass effect */
+  color: #fff; /* White text for dark background */
+}
 
 .search-btn {
   position: absolute;
@@ -100,7 +110,7 @@
   top: 4px;
   width: 38px;
   height: 38px;
-  background: linear-gradient(to bottom, #f43b47, #453a94); /* red-pink to blue gradient */
+  background: linear-gradient(to bottom, #f43b47, #453a94);
   border: none;
   border-radius: 50%;
   color: #fff;
@@ -110,7 +120,7 @@
   align-items: center;
   justify-content: center;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  }
+}
 
  .suggestions-list {
   position: absolute;
@@ -408,66 +418,7 @@ body {
     display: none;
   }
 }
-  /* Modal */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 999;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background: rgba(0,0,0,0.5);
-    }
-
-    .modal-content {
-      background: white;
-      margin: 10% auto;
-      padding: 30px;
-      border-radius: 10px;
-      width: 90%;
-      max-width: 400px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-    }
-
-    .modal-content h3 {
-      margin-bottom: 20px;
-      color: #0156ff;
-      text-align: center;
-    }
-
-    .modal-content input {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      font-size: 14px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-
-    .modal-content button {
-      width: 100%;
-      padding: 10px;
-      background: #0156ff;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    .close {
-      float: right;
-      font-size: 20px;
-      cursor: pointer;
-      color: #333;
-    }
-
-    .close:hover {
-      color: red;
-    }
-    .modal {
+  .modal {
   display: none;
   position: fixed;
   z-index: 999;
@@ -722,7 +673,7 @@ body, html {
 
 /* Headings */
 .footer-column h3 {
-  color: orange;
+  color: greenyellow;
   text-decoration: underline;
   margin-bottom: 15px;
   font-size: 18px;
@@ -745,24 +696,36 @@ body, html {
   text-decoration: underline;
 }
 
-/* Paragraphs */
+/* Footer Column Content */
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* important for alignment */
+}
+
+/* Paragraph Styling */
 .footer-column p {
   line-height: 1.7;
   font-size: 14px;
   margin-bottom: 10px;
+  text-align: left;
 }
 
 /* Social Icons */
 .social-icons {
   margin-top: 20px;
   display: flex;
-  gap: 15px;
+  gap: 20px;
+  justify-content: flex-start; /* align to left */
+  align-items: center;
+  padding: 0; /* no extra padding */
 }
 .social-icons i {
   font-size: 20px;
-  color: orange;
+  color: rgb(174, 233, 110);
   cursor: pointer;
 }
+
 
 /* Bottom Copyright */
 .footer-bottom {
@@ -1254,7 +1217,7 @@ setInterval(showNextSlide, 6000); // Change every 6 seconds */}
 </script>
 
 
- <!-- Enroll Modal -->
+ 
 <!-- Enroll Modal -->
 <div id="enrollModal" class="modal">
   <div class="modal-content">
@@ -1269,7 +1232,7 @@ setInterval(showNextSlide, 6000); // Change every 6 seconds */}
       <input type="email" id="enrollEmail" placeholder="Email address" required>
 
       <div class="buttons">
-        <button class="skip-btn" onclick="closeEnrollModal()">Skip</button>
+        
         <button class="submit-btn" onclick="submitEnrollForm()">Submit</button>
       </div>
     </div>
@@ -1287,26 +1250,18 @@ setInterval(showNextSlide, 6000); // Change every 6 seconds */}
   }
 
   function submitEnrollForm() {
-    const name = document.getElementById("enrollName").value.trim();
-    const mobile = document.getElementById("enrollMobile").value.trim();
-    const email = document.getElementById("enrollEmail").value.trim();
-    const course = document.getElementById("courseName").textContent;
+    var name = document.getElementById("enrollName").value.trim();
+    var mobile = document.getElementById("enrollMobile").value.trim();
+    var email = document.getElementById("enrollEmail").value.trim();
 
     if (name === "" || mobile === "" || email === "") {
       alert("Please fill in all fields.");
     } else {
-      alert(
-        "Enrollment submitted successfully!\n\n" +
-        "Course: " + course + "\n" +
-        "Name: " + name + "\n" +
-        "Mobile: " + mobile + "\n" +
-        "Email: " + email
-      );
+      alert("Enrollment submitted successfully");
       closeEnrollModal();
     }
   }
-
-  // Close modal if clicking outside
+  // Close modal if clicked outside
   window.addEventListener("click", function(event) {
     const enrollModal = document.getElementById("enrollModal");
     if (event.target === enrollModal) {

@@ -106,65 +106,7 @@ body {
       color: #222;
       border-left: 1px solid #eee;
     }
-/* Modal */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 999;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background: rgba(0,0,0,0.5);
-    }
-
-    .modal-content {
-      background: white;
-      margin: 10% auto;
-      padding: 30px;
-      border-radius: 10px;
-      width: 90%;
-      max-width: 400px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-    }
-
-    .modal-content h3 {
-      margin-bottom: 20px;
-      color: #0156ff;
-      text-align: center;
-    }
-
-    .modal-content input {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      font-size: 14px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-
-    .modal-content button {
-      width: 100%;
-      padding: 10px;
-      background: #0156ff;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    .close {
-      float: right;
-      font-size: 20px;
-      cursor: pointer;
-      color: #333;
-    }
-
-    .close:hover {
-      color: red;
-    }
+     
     .modal {
   display: none;
   position: fixed;
@@ -601,7 +543,7 @@ track.addEventListener("transitionend", () => {
 </script>
 
 
- <!-- Enroll Modal -->
+ 
 <!-- Enroll Modal -->
 <div id="enrollModal" class="modal">
   <div class="modal-content">
@@ -616,7 +558,7 @@ track.addEventListener("transitionend", () => {
       <input type="email" id="enrollEmail" placeholder="Email address" required>
 
       <div class="buttons">
-        <button class="skip-btn" onclick="closeEnrollModal()">Skip</button>
+        
         <button class="submit-btn" onclick="submitEnrollForm()">Submit</button>
       </div>
     </div>
