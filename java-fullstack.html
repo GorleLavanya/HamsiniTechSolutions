@@ -1,0 +1,111 @@
+<html>
+    <head>
+    <style>
+  .course-card {
+  width: 260px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 15px;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* 📷 Image Section */
+.course-card .card-image img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+/* 📄 Body Section */
+.course-card .card-body {
+  padding: 15px;
+}
+
+.course-card h2 {
+  font-size: 20px;
+  color: #222;
+  margin-bottom: 8px;
+}
+
+.course-card .rating {
+  font-size: 16px;
+  color: #ff9800;
+}
+
+.course-card p {
+  font-size: 14px;
+  color: #555;
+  margin: 4px 0;
+}
+
+/* 🔘 Footer Buttons */
+.course-card .card-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  background: #f5f5f5;
+  border-top: 1px solid #ddd;
+}
+
+.course-card .enroll-btn,
+.course-card .share-btn {
+  text-decoration: none;
+  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+/* 🎯 Enroll Button */
+.course-card .enroll-btn {
+  background: #007bff;
+  color: white;
+}
+
+.course-card .enroll-btn:hover {
+  background: #0056b3;
+}
+
+/* 🔗 Share Button */
+.course-card .share-btn {
+  background: #f1f1f1;
+  color: #333;
+}
+
+.course-card .share-btn:hover {
+  background: #ddd;
+}
+</style>
+    </head>
+    <body>
+      <div class="course-card">
+  <div class="card-image">
+    <img src="java.jpg" alt="Java Full Stack">
+  </div>
+  <div class="card-body">
+    <h2>Java Full Stack</h2>
+    <div class="rating">⭐⭐⭐⭐⭐ 5</div><br/>
+    <p>📅 <strong>Start Date:</strong> 12 Jul 2025</p>
+    <p>👨‍🏫 <strong>by:</strong> Mr. Pavan</p>
+    <p>⏳ <strong>Dur:</strong> 2 Months</p>
+  </div>
+  <div class="card-footer">
+    <a href="javascript:void(0);" class="enroll-btn" onclick="openEnrollModal('Java Full Stack')">ENROLL</a>
+    <a href="javascript:void(0);" class="share-btn" onclick="openShareModal()">🔗 SHARE</a>
+  </div>
+</div>
+
+    </body>
+</html>

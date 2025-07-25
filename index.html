@@ -74,12 +74,28 @@
       
     }
 
-    .logo-container img {
-      height: 50px;
-      width: auto;
-    }
+ .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 
-    .search-box {
+.logo-container img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+
+}
+
+.logo-container h4 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  line-height: 1.2;
+}
+
+ .search-box {
   position: relative;
   width: 200px;
   margin: 20px;
@@ -451,6 +467,11 @@ body {
 
 .close:hover {
   color: red;
+} 
+  .share-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers all children including icons */
 }
 
 .share-box h2 {
@@ -478,7 +499,7 @@ body {
   font-size: 15px;
   border: 1px solid #ccc;
   border-radius: 6px;
-  width: 70%;
+  width: 150%;
 }
 
 .copy-btn {
@@ -488,14 +509,18 @@ body {
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  width: 100%;
 }
 
 .social-icons {
   display: flex;
-  justify-content: center;
-  gap: 20px;
-  font-size: 28px;
+  justify-content: center;   /* center horizontally */
+  align-items: center;       /* center vertically (optional) */
+  gap: 30px;                 /* space between icons */
+  font-size: 32px;
+  margin-top: 20px;
 }
+
 .social-icons i {
   cursor: pointer;
   transition: transform 0.2s;
@@ -556,6 +581,23 @@ body {
   background-color: white;
   border: 1px solid #ccc;
 }
+ 
+.submit-btn {
+  background-color: #1e3a8a; /* Dark Blue */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #3749a6; /* Slightly lighter blue on hover */
+}
+
 .services-section {
   background-color: #f9f9fc; /* Very light blue-gray background */
   padding: 60px 30px;
@@ -639,6 +681,7 @@ body, html {
   background-color: #0d1172;
   margin: 0;
   padding: 0;
+  
 }
 
 /* Main Footer */
@@ -655,8 +698,8 @@ body, html {
   justify-content: space-between;
   max-width: 1200px;
   margin: auto;
-  gap: 30px;
-  font-size:large;
+  gap: 40px;
+  font-size:x-large;
 }
 
 /* Each column */
@@ -665,11 +708,37 @@ body, html {
   min-width: 240px;
 }
 
-/* Logo */
-.footer-logo {
-  height: 60px;
-  margin-bottom: 20px;
+.footer-logo-row {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 15px 5px;
+
+  
 }
+
+.footer-logo-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-logo-left img {
+  width: 60px;
+  height: auto;
+  object-fit: contain;
+  /* Do not use border-radius so it stays rectangular */
+}
+
+.footer-logo-left h4 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.2;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
 
 /* Headings */
 .footer-column h3 {
@@ -693,7 +762,7 @@ body, html {
   font-size: 14px;
 }
 .footer-column ul li a:hover {
-  text-decoration: underline;
+  color: #d78725 ;
 }
 
 /* Footer Column Content */
@@ -721,11 +790,10 @@ body, html {
   padding: 0; /* no extra padding */
 }
 .social-icons i {
-  font-size: 20px;
+  font-size: 25px !important;
   color: rgb(174, 233, 110);
   cursor: pointer;
 }
-
 
 /* Bottom Copyright */
 .footer-bottom {
@@ -735,6 +803,12 @@ body, html {
   text-align: center;
   padding: 12px 0;
   font-size: 20px;
+}
+.footer * {
+  font-size: 18px !important; /* or any size you prefer */
+}
+.footer {
+  padding-bottom: 80px; /* increased from existing padding */
 }
 
 </style>
@@ -749,16 +823,19 @@ body, html {
   <span>|</span>
   <a href="hire.html">Hire From Us</a>
   <span>|</span>
-  <span>📞 +91 8179191999</span>
+  <span>📞 +91 6304509572</span>
   <span>|</span>
-  <span>✉️ support@hamsinitechsolutions.com</span>
+  <span>✉️ hamsinitech@gmail.com</span>
 </div>
 
   <!-- GLASS NAVBAR -->
   <div class="glass-navbar">
     <!-- Logo -->
     <div class="logo-container">
-      <img src="job-assist.jpeg" alt="Hamsini Logo">
+      <div class="logo-container">
+       <img src="logo.jpg" alt="Hamsini Logo">
+       <h4><span>HamsiniTech</span><br><span>Solutions</span></h4>
+       </div>
     </div>
 
   <!-- Search Box -->
@@ -770,8 +847,7 @@ body, html {
   <ul id="suggestions" class="suggestions-list"></ul>
 </div>
 
-
-    <!-- Navigation Links -->
+<!-- Navigation Links -->
     <div class="navbar">
       <div class="nav-links">
         <a href="index.html">Home</a>
@@ -821,7 +897,7 @@ body, html {
     <img class="slider-image active" src="data science (2).jpg" alt="Slide 1" />
     <img class="slider-image" src="aws and devops.jpeg" alt="Slide 2" />
     <img class="slider-image" src="data analytics.jpeg" alt="Slide 3" />
-  </div>
+  </div><br/>
 
   <div>
     <h1>&emsp;&emsp;Our Courses</h1>
@@ -1074,7 +1150,7 @@ const originalCards = Array.from(track.children);
 const visibleCards = 4;
 
 // Clone last 4 and prepend to start
-originalCards.slice(-visibleCards).forEach(card => {
+  originalCards.slice(-visibleCards).forEach(card => {
   const clone = card.cloneNode(true);
   track.insertBefore(clone, track.firstChild);
 });
@@ -1218,6 +1294,7 @@ setInterval(showNextSlide, 6000); // Change every 6 seconds */}
 
 
  
+
 <!-- Enroll Modal -->
 <div id="enrollModal" class="modal">
   <div class="modal-content">
@@ -1225,50 +1302,53 @@ setInterval(showNextSlide, 6000); // Change every 6 seconds */}
     <div class="enroll-form">
       <h2>Course :</h2>
       <h1 id="courseName">Course Name</h1>
-
-      <!-- 🟢 Add IDs here -->
-      <input type="text" id="enrollName" placeholder="Full Name" required>
-      <input type="text" id="enrollMobile" placeholder="Mobile Number" required>
-      <input type="email" id="enrollEmail" placeholder="Email address" required>
-
-      <div class="buttons">
-        
-        <button class="submit-btn" onclick="submitEnrollForm()">Submit</button>
-      </div>
+      
+      <form id="enrollForm">
+        <input type="text" id="fullName" placeholder="Full Name" required />
+        <input type="text" id="mobile" placeholder="Mobile Number" required />
+        <input type="email" id="email" placeholder="Email Address" required />
+        <button class="submit-btn " type="submit" class="submit-btn">Submit</button>
+      </form>
     </div>
   </div>
 </div>
 
+
 <script>
-  function openEnrollModal(courseTitle) {
-    document.getElementById("courseName").textContent = courseTitle;
+  // Open modal and set course name
+  function openEnrollModal(courseName) {
     document.getElementById("enrollModal").style.display = "block";
+    document.getElementById("courseName").innerText = courseName;
   }
 
+  // Close modal
   function closeEnrollModal() {
     document.getElementById("enrollModal").style.display = "none";
   }
 
-  function submitEnrollForm() {
-    var name = document.getElementById("enrollName").value.trim();
-    var mobile = document.getElementById("enrollMobile").value.trim();
-    var email = document.getElementById("enrollEmail").value.trim();
+  // Handle form submission
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("enrollForm");
 
-    if (name === "" || mobile === "" || email === "") {
-      alert("Please fill in all fields.");
-    } else {
-      alert("Enrollment submitted successfully");
-      closeEnrollModal();
-    }
-  }
-  // Close modal if clicked outside
-  window.addEventListener("click", function(event) {
-    const enrollModal = document.getElementById("enrollModal");
-    if (event.target === enrollModal) {
-      enrollModal.style.display = "none";
-    }
+    form.addEventListener("submit", function (e) {
+      e.preventDefault(); // Prevent real form submission
+
+      const name = document.getElementById("fullName").value;
+      const mobile = document.getElementById("mobile").value;
+      const email = document.getElementById("email").value;
+
+      if (name && mobile && email) {
+        alert("✅ Enrolled Successfully for " + document.getElementById("courseName").innerText + "!");
+        form.reset(); // clear form
+        closeEnrollModal(); // close modal
+      } else {
+        alert("❌ Please fill in all the fields.");
+      }
+    });
   });
 </script>
+
+
 
 
 <!-- Our Services Section -->
@@ -1340,7 +1420,10 @@ setInterval(showNextSlide, 6000); // Change every 6 seconds */}
 
       <!-- Logo & About -->
       <div class="footer-column footer-about">
-        <img src="logo.png" alt="Logo" class="footer-logo">
+        <div class="footer-logo-left" style="margin-bottom:15px;">
+        <img src="logo.jpg" alt="Hamsini Logo">
+          <h4>HamsiniTech<br>Solutions</h4>
+       </div>
         <p>
           At Hamsini Tech Solutions you are guaranteed best in class training as we team up the most efficient, professional and dedicated trainers who are subject matter experts in their respective area of specialization.
         </p>
@@ -1359,13 +1442,10 @@ setInterval(showNextSlide, 6000); // Change every 6 seconds */}
         <ul>
           <li><a href="#">About us</a></li>
           <li><a href="#">All Courses</a></li>
-          <li><a href="#">Trainee Registration</a></li>
-          <li><a href="#">Internships</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">Testimonials</a></li>
-          <li><a href="#">Placements</a></li>
           <li><a href="#">Online Training</a></li>
           <li><a href="#">Classroom Training</a></li>
+          <li><a href="#">Weekend Training</a></li>
+          <li><a href="#">New Batches</a></li>
           <li><a href="#">Contact Us</a></li>
         </ul>
       </div>
@@ -1384,11 +1464,10 @@ setInterval(showNextSlide, 6000); // Change every 6 seconds */}
       <!-- Contact Info -->
       <div class="footer-column">
         <h3>CONTACT INFO</h3>
-        <p><i class="fas fa-map-marker-alt"></i> Sri Sai Arcade, Door No. 7-1-455, 2nd Floor, Ameerpet, Hyderabad, Telangana 500038</p>
-        <p><i class="fas fa-phone"></i> IND: +91 9100920092, +91 9100940094</p>
-        <p><i class="fas fa-phone"></i> USA: +1 201 203 8999</p>
-        <p><i class="fas fa-envelope"></i> info@hamsinitech.com</p>
-        <p><i class="fas fa-clock"></i> Mon - Sat: 7AM to 9PM (IST)</p>
+        <p><span style="color: rgb(63, 234, 48);"><i class="fas fa-map-marker-alt"></i></span> Flat no:502,Annapoorna Block,Adityya Enclave,Ameerpet, Hyderabad, Telangana 500085</p>
+        <p><span style="color: rgb(63, 234, 48);"><i class="fas fa-phone"></i></span>  +91 6304509572</p>
+        <p><span style="color: rgb(63, 234, 48);"><i class="fas fa-envelope"></i></span> hamsinitech@gmail.com</p>
+        <p><span style="color: rgb(63, 234, 48);"><i class="fas fa-clock"></i></span> Mon-Sat: 9:00 AM - 6:00 PM</p>
       </div>
     </div>
   </footer>
@@ -1457,52 +1536,50 @@ setInterval(showNextSlide, 6000); // Change every 6 seconds */}
   }
 </script>
    <script>
-  const courses = [
-    { name: "AWS & DevOps", link: "aws-devops.html" },
-    { name: "Azure DevOps", link: "azure.html" },
-    { name: "Java Full Stack", link: "java-fullstack.html" },
-    { name: "React.Js", link: "react.html" },
-    { name: "Generative AI", link: "genai.html" },
-    { name: "Data Analytics", link: "data-analytics.html" },
-    { name: "Data Science", link: "data-science.html" },
-    { name: "Power BI", link: "powerbi.html" },
-    { name: "Linux Admin", link: "linux.html" },
-    { name: "Tableau", link: "tableau.html" },
-    { name: "Python", link: "python.html" },
-    { name: "Python Full Stack", link: "python-fullstack.html" }
-  ];
+const courses = [
+  { name: "AWS & DevOps", link: "aws-devops.html" },
+  { name: "Azure DevOps", link: "azure.html" },
+  { name: "Java Full Stack", link: "java-fullstack.html" },
+  { name: "Python Full Stack", link: "python-fullstack.html" },
+  { name: "React.Js", link: "react.html" }
+  // ✅ add more courses as needed
+];
 
-  function filterCourses() {
-    const input = document.getElementById("searchInput").value.toLowerCase();
-    const suggestions = document.getElementById("suggestions");
-    suggestions.innerHTML = "";
+function filterCourses() {
+  const input = document.getElementById("searchInput").value.toLowerCase();
+  const suggestions = document.getElementById("suggestions");
+  
+  suggestions.innerHTML = "";  // clear old suggestions
 
-    if (input === "") {
-      suggestions.style.display = "none";
-      return;
-    }
-
-    const matches = courses.filter(course =>
-      course.name.toLowerCase().includes(input)
-    );
-
-    if (matches.length === 0) {
-      suggestions.style.display = "none";
-      return;
-    }
-
-    matches.forEach(course => {
-      const li = document.createElement("li");
-      li.textContent = course.name;
-      li.onclick = () => {
-        window.location.href = course.link;
-      };
-      suggestions.appendChild(li);
-    });
-
-    suggestions.style.display = "block";
+  if (input === "") {
+    suggestions.style.display = "none";
+    return;
   }
+
+  // filter matching courses
+  const matches = courses.filter(course =>
+    course.name.toLowerCase().includes(input)
+  );
+
+  if (matches.length === 0) {
+    suggestions.style.display = "none";
+    return;
+  }
+
+  // show dropdown list
+  matches.forEach(course => {
+    const li = document.createElement("li");
+    li.textContent = course.name;
+    li.onclick = () => {
+      window.location.href = course.link;  // ✅ redirect to that course page
+    };
+    suggestions.appendChild(li);
+  });
+
+  suggestions.style.display = "block";
+}
 </script>
+
 
 
 </body>
